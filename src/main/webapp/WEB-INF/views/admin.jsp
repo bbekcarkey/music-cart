@@ -1,5 +1,5 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
-<%@include file="/WEB-INF/views/templete/header.jsp" %>>
+<%@include file="/WEB-INF/views/templete/header.jsp" %>
 
 <div class="container-wrapper">
 <div class="page-header">

@@ -15,7 +15,6 @@ import com.emusicstore.model.Product;
 
 
 
-
 @Transactional
 @Repository("productdao")
 public class ProductDao implements ProductDaoInter {
@@ -39,7 +38,7 @@ public  void addProduct(Product product)
 
 	
 	@Override
-public Product getProductbyId(int productId) 
+public Product getProductbyId(String productId) 
 {
 	Session session = sessionFactory.getCurrentSession();
 	Product product = (Product) session.get(Product.class,productId);
@@ -59,7 +58,7 @@ public List<Product> getAllProduct(){
 
 	
 	@Override
-public void deleteProduct(int productId)
+public void deleteProduct(String productId)
 {
 	Session session = sessionFactory.getCurrentSession();
 	session.delete(getProductbyId(productId));

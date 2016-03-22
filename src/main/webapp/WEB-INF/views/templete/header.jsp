@@ -1,5 +1,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <link href="<c:url value='/resources/css/bootstrap.min.css'/>" rel="stylesheet"/>
+<link href="https://cdn.datatables.net/1.10.10/css/jquery.dataTables.min.css" rel="stylesheet">
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
 <%--
   Created by IntelliJ IDEA.
   User: Prajit
@@ -22,8 +24,19 @@
 
     <!-- Bootstrap core CSS -->
     <link href="<c:url value="/resources/css/bootstrap.min.css" />" rel="stylesheet">
+    
+    <!-- Angularjs -->
+   <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.1/angular.min.js"></script>
+   
+    <%--Jquery--%>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
 
-
+    <%--Data Table--%>
+    <script type="text/javascript" src="https://cdn.datatables.net/1.10.10/js/jquery.dataTables.min.js"></script>
+    
+    
+    
+    
 
     <!-- Custom styles for this template -->
 
@@ -32,7 +45,7 @@
 ================================================== -->
 <body>
 <div class="navbar-wrapper">
-    <div class="container">
+    <div  class="container">
 
         <nav class="navbar navbar-inverse navbar-static-top">
             <div class="container">
@@ -43,7 +56,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="#">Project name</a>
+                    <a class="navbar-brand" href="#">Prajit E Music</a>
                 </div>
                 <div id="navbar" class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">

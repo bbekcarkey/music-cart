@@ -1,43 +1,56 @@
-<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
-<%@include file="/WEB-INF/views/templete/header.jsp" %>>
+<%@taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+<%@include file="/WEB-INF/views/templete/header.jsp"%>
 
-
-
-<!-- Marketing messaging and featurettes
-================================================== -->
-<!-- Wrap the rest of the page in another container to center all the content. -->
 
 <div class="container-wrapper">
-
-   <div class="container">
+    <div class="container">
         <div class="page-header">
-                <h1>Product Detail</h1>
+            <h1>Product Detail</h1>
 
-                <p class="lead">Here is the Detail Information of the product</p>
+            <p class="lead">Here is the detail information of the product!</p>
+        </div>
+
+        <div class="container" data-ng-app = "cartApp">
+            <div class="row">
+                <div class="col-md-5">
+                   <h2>${product.productId}</h2>
                 </div>
-<div class="container">
-<div class="row">
 
-<div class="col-ad-5">
+                <div class="col-md-5">
+                    <h3>${product.productName}</h3>
+                    <p>${product.productDescription}</p>
+                    <p>
+                       <strong>Manufacturer</strong> : ${product.productManufacturer}
+                    </p>
+                    <p>
+                        <strong>Category</strong> : ${product.productCategory}
+                    </p>
+                    <p>
+                        <strong>Condition</strong> : ${product.productCondition}
+                    </p>
+                    <h4>${product.productPrice} USD</h4>
 
-<img src="#" alt="image" style="width: 219px; heigth:300px; height: 113px" /><p align="left">
-</p></div>
+                    <br>
 
-<div class="col-ad-5">
-<h3>Product Name:${product.productName} </h3>
-<p>Product Description:${product.productDescription}</p>
-<p>Manufacturer:${product.productManufacturer}</p>
-<p>Category:${product.productCategory}</p>
-<p>Condition:${product.productCondition}</p>
-<p>Price:${product.productPrice}USD</p>
-</div>
+                    <c:set var="role" scope="page" value="${param.role}" />
+                    <c:set var="url" scope="page" value="/productlist" />
+                   
+                    <p data-ng-controller="cartCtrl">
+                        <a href="<c:url value="${url}" />" class="btn btn-default">Back</a>
+                        <a href="#" class="btn btn-warning btn-large"
+                           data-ng-click="addToCart('${product.productId}')"><span
+                                class="glyphicon glyphicon-shopping-cart"></span>Order
+                            Now</a>
+                        <a href="<spring:url value="/cart" />"
+                           class="btn btn-default"><span class="glyphicon glyphicon-hand-right"></span>View Cart</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+        </div></div>
 
-</div>
 
 
-
-</div>
-
-
-<%@include file="/WEB-INF/views/templete/footer.jsp" %>>
-  
+  <script src="<c:url value="/resources/js/controller.js" /> "></script>
+<%@include file="/WEB-INF/views/templete/footer.jsp" %>

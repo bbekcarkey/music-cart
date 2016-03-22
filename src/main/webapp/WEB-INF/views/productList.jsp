@@ -1,7 +1,19 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
-<%@include file="/WEB-INF/views/templete/header.jsp" %>>
+<%@include file="/WEB-INF/views/templete/header.jsp" %>
 
 
+
+<script>
+    $(document).ready(function(){
+        var searchCondition = '${searchCondition}';
+
+        $('.table').DataTable({
+            "lengthMenu": [[1,2,3,5,10,-1], [1,2,3,5,10, "All"]],
+            "oSearch": {"sSearch": searchCondition}
+        });
+    });
+
+</script>
 
 <!-- Marketing messaging and featurettes
 ================================================== -->
@@ -19,17 +31,18 @@
 <table class="table table-striped table-hover">
 <thead>
 <tr class="bg-success">
-        <th>Photo thumb</th>
+        <th>Product Id </th>
         <th>Product Name</th>
         <th>Category</th>
         <th>Condition</th>
         <th>Price</th>
+        <th>Product Info</th>
         
         </tr>
 </thead>
  <c:forEach items="${products}" var="product">
 <tr>
-        <td><img src="#" alt="image"/></td>
+        <td>${product.productId}</td>
         <td>${product.productName}</td>
         <td>${product.productCategory}</td>
         <td>${product.productCondition}</td>

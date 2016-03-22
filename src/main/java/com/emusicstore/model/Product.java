@@ -31,7 +31,7 @@ public class Product {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
-	private int productId;
+	private String productId;
 	private String productName;
 	private String productCategory;
 	private String productDescription;
@@ -49,10 +49,10 @@ public class Product {
 	public String getProductName() {
 		return productName;
 	}
-	public int getProductId() {
+	public String getProductId() {
 		return productId;
 	}
-	public void setProductId(int productId) {
+	public void setProductId(String productId) {
 		this.productId = productId;
 	}
 	public void setProductName(String productName) {
@@ -79,6 +79,16 @@ public class Product {
 	public String getProductCondition() {
 		return productCondition;
 	}
+	@Override
+	public String toString() {
+		return "Product [productId=" + productId + ", productName=" + productName + ", productCategory="
+				+ productCategory + ", productDescription=" + productDescription + ", productPrice=" + productPrice
+				+ ", productCondition=" + productCondition + ", productStatus=" + productStatus + ", unitInstock="
+				+ unitInstock + ", productManufacturer=" + productManufacturer + "]";
+	}
+
+
+
 	public void setProductCondition(String productCondition) {
 		this.productCondition = productCondition;
 	}

@@ -7,9 +7,9 @@ import com.emusicstore.model.Product;
 public interface ProductDaoInter {
 
 	public  void addProduct(Product product);
-	public Product getProductbyId(int productId) ;
+	public Product getProductbyId(String productId) ;
 	public List<Product> getAllProduct();
-	public void deleteProduct(int productId);
+	public void deleteProduct(String productId);
 	
 	
 	

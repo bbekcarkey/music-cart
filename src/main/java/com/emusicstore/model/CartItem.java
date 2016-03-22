@@ -4,9 +4,22 @@ public class CartItem {
 	private Product product;
 	private int quantity;
 	private double total;
+	
+	public CartItem()
+	{
+		
+	}
+	public CartItem(Product product) {
+		super();
+		this.product = product;
+		this.quantity = 1;
+		this.total = product.getProductPrice();
+	}
 	public Product getProduct() {
 		return product;
 	}
+	
+	
 	public void setProduct(Product product) {
 		this.product = product;
 	}
@@ -20,7 +33,9 @@ public class CartItem {
 		return total;
 	}
 	public void setTotal(double total) {
-		this.total = total;
+		this.total = total*quantity;
 	}
+	
+
 
 }

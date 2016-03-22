@@ -36,7 +36,7 @@ public class AdminController {
 	
 	
 	@RequestMapping("/admin/productInventory/deleteProduct{productId}")
-	public String deleteProduct(@PathVariable int productId,Model model) throws IOException
+	public String deleteProduct(@PathVariable String productId,Model model) throws IOException
 	{
 		productdao.deleteProduct(productId);
 		return "redirect:/admin/productInventory";

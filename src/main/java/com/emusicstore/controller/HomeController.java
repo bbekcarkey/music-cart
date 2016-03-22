@@ -46,10 +46,10 @@ public class HomeController {
 	
 
 	@RequestMapping("/productlist/viewProduct/{productId}")
-	public String viewProduct(@PathVariable int productId,Model model) throws IOException
+	public String viewProduct(@PathVariable String productId,Model model) throws IOException
 	{
 		model.addAttribute("product",productdao.getProductbyId(productId));
-		return "viewproduct";
+		return "viewProduct";
 		
 	}
 
