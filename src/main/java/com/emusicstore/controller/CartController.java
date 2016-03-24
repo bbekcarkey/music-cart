@@ -55,7 +55,8 @@ public class CartController {
         }
 
         @RequestMapping(value = "/add/{productId}", method = RequestMethod.PUT)
-        public void addItem(@PathVariable(value = "productId") String productId, HttpServletRequest request) {
+        @ResponseBody
+        public boolean addItem(@PathVariable(value = "productId") String productId, HttpServletRequest request) {
         	 System.out.println("haha");
 
       
@@ -74,6 +75,7 @@ public class CartController {
                 }
 
                 cart.addCartItem(new CartItem(product));
+                return true;
 
                // cartDao.update(("sessionId"), cart);
         }

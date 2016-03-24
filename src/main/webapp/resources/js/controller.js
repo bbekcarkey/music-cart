@@ -21,7 +21,7 @@ cartApp.controller("cartCtrl",function($scope,$http)
 
         $scope.addToCart=function(productId){
       	
-                $http.put('/emusicstore/rest/cart/add/'+productId).success(function(){
+                $http.put('/emusicstore/rest/cart/add/'+productId).success(function(response){
                 	 alert("product is successfully added to cart"+productId);
           
                 });
