@@ -10,6 +10,7 @@ public interface ProductDaoInter {
 	public Product getProductbyId(String productId) ;
 	public List<Product> getAllProduct();
 	public void deleteProduct(String productId);
+	public List<Product> getAllProductAdmin();
 	
 	
 	

@@ -8,7 +8,7 @@
         var searchCondition = '${searchCondition}';
 
         $('.table').DataTable({
-            "lengthMenu": [[1,2,3,5,10,-1], [1,2,3,5,10, "All"]],
+            "lengthMenu": [[-1,1,2,3,5,10,], ["All",1,2,3,5,10]],
             "oSearch": {"sSearch": searchCondition}
         });
     });
@@ -35,7 +35,9 @@
         <th>Product Name</th>
         <th>Category</th>
         <th>Condition</th>
+        <th>Stock</th>
         <th>Price</th>
+        
         <th>Product Info</th>
         
         </tr>
@@ -46,6 +48,7 @@
         <td>${product.productName}</td>
         <td>${product.productCategory}</td>
         <td>${product.productCondition}</td>
+        <td>${product.unitInstock}</td>
         <td>${product.productPrice}USD</td>
         <td class="active"><a href="<c:url value="/productlist/viewProduct/${product.productId}"/>">Info</a></td>
               

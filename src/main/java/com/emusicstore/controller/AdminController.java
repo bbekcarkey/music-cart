@@ -30,7 +30,7 @@ public class AdminController {
 	public String adminProductInventory(Model model)
 	{
 		System.out.println("inside inventory");
-		model.addAttribute("products",productdao.getAllProduct());
+		model.addAttribute("products",productdao.getAllProductAdmin());
 		return "productInventory";
 	}
 	

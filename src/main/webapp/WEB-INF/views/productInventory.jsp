@@ -23,6 +23,7 @@
         <th>Product Name</th>
         <th>Category</th>
         <th>Condition</th>
+        <th>Status</th>
         <th>Price</th>
         <th></th>
         <th></th>
@@ -35,6 +36,8 @@
         <td>${product.productName}</td>
         <td>${product.productCategory}</td>
         <td>${product.productCondition}</td>
+        <td>${product.productStatus}</td>
+
         <td>${product.productPrice}USD</td>
         <td class="active"><a href="<c:url value="/productlist/viewProduct/${product.productId}"/>">Info</a></td>
         <td class="active"><a href="<c:url value="/admin/productInventory/deleteProduct${product.productId}"/>">Delete</a></td>

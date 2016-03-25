@@ -2,9 +2,11 @@ package com.emusicstore.dao;
 
 import java.util.List;
 
+import org.hibernate.Criteria;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
@@ -49,12 +51,16 @@ public Product getProductbyId(String productId)
 	@Override
 public List<Product> getAllProduct(){
 	Session session = sessionFactory.getCurrentSession();
-	Query query = session.createQuery("from Product");
-	List<Product>products = query.list();
+	
+	Criteria cr = session.createCriteria(Product.class);
+	cr.add(Restrictions.eq("productStatus","active"));
+	List<Product>products =cr.list();
 	session.flush();
 	return products;
 
 }
+
+	
 
 	
 	@Override
@@ -66,6 +72,15 @@ public void deleteProduct(String productId)
 
 	
 }
+
+	@Override
+	public List<Product> getAllProductAdmin() {
+		Session session = sessionFactory.getCurrentSession();
+		Query query = session.createQuery("from Product");
+		List<Product>products =query.list();
+		session.flush();
+		return products;
+	}
 
 
 }
